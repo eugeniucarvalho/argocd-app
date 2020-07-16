@@ -18,6 +18,7 @@ spec:
     certResolver: default
     options: {}
 
+# namespace: {{ .Values.namespace }}
 # spec:
 #   rules:
 #     - host: k8s.eugeniocarvalho.dev

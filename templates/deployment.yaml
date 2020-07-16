@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: {{ template "deploy-name" . }}
+  # namespace: {{ .Values.namespace }}
   labels:
     app: {{ template "app-name" . }}
     release: {{ .Release.Name }}
