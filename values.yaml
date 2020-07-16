@@ -3,6 +3,7 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 3
+namespace: app-teste
 
 image:
   repository: eugeniucarvalho1/teste
