@@ -1,0 +1,29 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ template "app-name" . }}-ingress
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
+  # namespace: argocd
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`{{ .Values.ingress.host }}`)
+      kind: Rule
+      services:
+        - name: {{ template "app-name" . }}
+          port: {{ .Values.ingress.port }}
+  tls:
+    certResolver: default
+    options: {}
+
+# spec:
+#   rules:
+#     - host: k8s.eugeniocarvalho.dev
+#       http:
+#         paths:
+#           - path: ""
+#             backend:
+#               serviceName: whoami
+#               servicePort: 80
