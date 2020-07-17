@@ -14,9 +14,17 @@ spec:
       services:
         - name: {{ template "app-name" . }}
           port: {{ .Values.ingress.port }}
-  tls:
-    certResolver: default
-    options: {}
+  # certificatesResolvers:
+    # myresolver:
+    #   acme:
+        # caServer: https://acme-staging-v02.api.letsencrypt.org/directory
+    # options: {}
+  # tls:
+  #   certResolver: default
+  #   domains:
+  #     - main: {{ .Values.ingress.main }}
+  #       sans:
+  #        - '*.{{ .Values.ingress.sans }}'
 
 # namespace: {{ .Values.namespace }}
 # spec:

@@ -20,6 +20,8 @@ ingress:
   enabled: true
   annotations: {}
   host: app.k8s.eugeniocarvalho.dev
+  sans: k8s.eugeniocarvalho.dev
+  main: eugeniocarvalho.dev
   port: 80
   path: ""
   tls: []
