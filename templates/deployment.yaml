@@ -27,14 +27,14 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8000
-          # livenessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: http
-          # readinessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: http
+          livenessProbe:
+            httpGet:
+              path: /home
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /home
+              port: http
 # {{ toYaml .Values.resources | indent 12 }}
 #     {{- with .Values.nodeSelector }}
 #       nodeSelector:
