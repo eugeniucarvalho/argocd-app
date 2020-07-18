@@ -19,9 +19,10 @@ service:
 ingress:
   enabled: true
   annotations: {}
-  host: app.k8s.eugeniocarvalho.dev
-  sans: k8s.eugeniocarvalho.dev
-  main: eugeniocarvalho.dev
+  secretName: monteasua-com-br-tls
+  host: app.monteasua.com.br
+  # sans: k8s.monteasua.com.br
+  main: monteasua.com.br
   port: 80
   path: ""
   tls: []
